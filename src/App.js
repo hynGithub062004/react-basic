@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Nav from './components/Nav';
 import { useState } from 'react';
+import Todo from './components/Todo';
 
 function App() {
 
@@ -19,7 +20,7 @@ function App() {
       return;
     }
     let newTodo = {id: 'abc', title: input}
-    setTodos([...todos, newTodo])
+    setTodos(prev => [...prev, newTodo])
     setInput('')
   }
 
@@ -35,11 +36,11 @@ function App() {
         <p>
           Hello world with React {name} !
         </p>
-        <ul>
-          {todos.map((todo, index) => (
-            <li className="todo-child" key={index}>{todo.title}</li>
-          ))}
-        </ul>
+
+        <Todo 
+          todos = {todos}
+        />
+        
         <input type='text' value={input} onChange={(e) => handleInput(e)}/>
         <button
           type='button'
@@ -50,6 +51,51 @@ function App() {
       </header>
     </div>
   );
+
+  // const [jobs, setJobs] = useState(['sweeping'])
+  // const [job, seJtob] = useState('') 
+  
+  // const handleClick = () => {
+    // if(!job) {
+    //   alert('emty')
+    //   return;
+    // }
+  //   setJobs(prev => [...prev, job])
+  //   seJtob('')
+  // }
+
+  // const handleInput = (e) => {
+  //   seJtob(e.target.value)
+   
+  // }
+
+  // return (
+  //   <div className="App">
+  //   <Nav />
+  //     <header className="App-header">
+  //       <img src={logo} className="App-logo" alt="logo" />
+  //       <p>
+  //         Hello world with React
+  //       </p>
+
+  //       <ul>
+  //         {jobs.map((job, index) => (
+  //           <li key={index}>{job}</li>
+  //         ))}
+  //       </ul>
+
+  //       <input type="text" value={job} onChange={(e) => handleInput(e)}/>
+  //       <button
+  //         onClick={() => handleClick()} 
+  //       >
+  //         ADD
+  //       </button>
+
+  //     </header>
+  //   </div>
+  // );
 }
+
+
 
 export default App;
