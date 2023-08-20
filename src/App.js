@@ -4,10 +4,9 @@ import Nav from './components/Nav';
 
 function App() {
 
-  // let name = 'huyen'
-  // let boolean = true
-  // let obj = {name: 'huyen', chanel: 'huyendev'}
-  let link = 'https://github.com/hynGithub062004'
+  const handleEventClick = (e) => {
+    console.log(e.target.value)
+  }
 
   return (
     <div className="App">
@@ -17,8 +16,13 @@ function App() {
         <p>
           Hello world with React
         </p>
-        <a href={link}>Visit my Github</a>
-        
+        <input type='text' value='eric' onClick={(e) => handleEventClick(e)}/>
+        <button
+          type='button'
+          onClick={(e) => handleEventClick(e)}
+        >
+          click me
+        </button>
       </header>
     </div>
   );
