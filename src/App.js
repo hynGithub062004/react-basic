@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import Nav from './components/Nav';
 
 function App() {
 
@@ -10,12 +11,13 @@ function App() {
 
   return (
     <div className="App">
+      <Nav />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Hello world with React
         </p>
-        <a href={link} target='_blank'>Visit my Github</a>
+        <a href={link}>Visit my Github</a>
         
       </header>
     </div>
